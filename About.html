@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos – Roston Entreprise</title>
+
+<!-- Styles -->
+<style>
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #222;
+    --accent: #4285f4;
+    --card-bg: #fff;
+    --section-title-color: #222;
+}
+
+body.dark {
+    --bg-color: #181818;
+    --text-color: #fff;
+    --accent: #1a73e8;
+    --card-bg: #242424;
+    --section-title-color: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+/* Top Actions */
+.top-actions {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 2000;
+}
+
+.home-link {
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 20px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transition: transform 0.2s, background 0.3s, color 0.3s;
+}
+
+.home-link:hover {
+    transform: translateY(-2px);
+    background: var(--accent);
+    color: #fff;
+}
+
+#themeBtn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transition: background 0.3s, color 0.3s;
+}
+
+#themeBtn:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* About Section */
+.about-section {
+    max-width: 1000px;
+    margin: 120px auto 80px;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.about-content {
+    flex: 1 1 500px;
+    min-width: 300px;
+}
+
+.about-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--section-title-color);
+}
+
+.about-content h3 {
+    font-size: 1.3rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: var(--section-title-color);
+}
+
+.about-content p, 
+.about-content ul {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.about-content ul li {
+    margin-bottom: 8px;
+}
+
+/* Image Box */
+.image-box {
+    flex: 1 1 250px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.image-box img {
+    width: 300px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-top: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
+
+<!-- Top actions -->
+<div class="top-actions">
+    <a href="Home.html" class="home-link">Accueil</a>
+    <button id="themeBtn">🌙</button>
+</div>
+
+<!-- About Section -->
+<section class="about-section">
+
+    <div class="about-content">
+
+        <h1>QUI SOMMES-NOUS ?</h1>
+
+        <p>
+          Fondée en 2025 par Genèse Prestance LOUBA, Roston Entreprise est née de la volonté de mettre des compétences intellectuelles, psychologiques et pratiques au service du plus grand nombre. Notre ambition est d’accompagner les individus, les organisations et les porteurs de projets dans leur quête de performance, de stabilité et de croissance durable.
+        </p>
+
+        <p>
+Nous nous positionnons comme un partenaire stratégique, engagé aux côtés de nos clients pour optimiser leurs performances, structurer leur fonctionnement interne et renforcer leur capacité d’adaptation dans un environnement en constante évolution.
+        </p>
+
+        <p>
+Nos domaines d’intervention couvrent : 
+        </p>
+
+        <ul>
+            <li><b>La gestion des ressources humaines et l’administration</b>, afin de structurer les équipes et améliorer l’efficacité organisationnelle ;</li> 
+            <li><b>La gestion économique et financière</b>, pour un pilotage rigoureux des ressources et une meilleure rentabilité ;</li>
+            <li><b>La psychologie</b>, centrée sur le bien-être, l’équilibre et la stabilité personnelle et professionnelle ;</li>
+            <li><b>Le coaching relationnel</b>, dédié au développement du leadership, de la communication et des relations harmonieuses.</li>
+        </ul>
+
+        <p>
+Chez Roston Entreprise, notre approche repose sur l’expertise, l’écoute active et des solutions sur mesure, conçues pour répondre aux besoins réels de chaque client.
+        </p>
+
+        <h3>🤝 Nos partenariats</h3>
+        <ul>
+            <li><b>Programme d’Affermissement et d’Édification</b> (ProAE)</li>
+            <li><b>Christelle Délices</b> – Restauration</li>
+            <li><b>Helios S.A</b> – Transport terrestre</li>
+        </ul>
+
+    </div>
+
+    <div class="image-box">
+        <img src="logo.png" alt="Roston Entreprise">
+        <img src="ProAE.png" alt="ProAE">
+        <img src="Equipe.png" alt="Équipe">
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-bottom">
+        © 2025 Roston Entreprise — Tous droits réservés
+    </div>
+</footer>
+
+<!-- JS -->
+<script>
+const themeBtn = document.getElementById('themeBtn');
+if(localStorage.getItem('theme') === 'dark'){
+    document.body.classList.add('dark');
+    themeBtn.textContent = '☀️';
+}
+
+themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    if(document.body.classList.contains('dark')){
+        localStorage.setItem('theme', 'dark');
+        themeBtn.textContent = '☀️';
+    } else {
+        localStorage.setItem('theme', 'light');
+        themeBtn.textContent = '🌙';
+    }
+});
+</script>
+
+</body>
+</html>
