@@ -7,34 +7,36 @@
 <style>
 /* VARIABLES */
 :root {
-    --bg-color: #f9f9f9;
-    --text-color: #222;
-    --accent: #4285f4;
-    --card-bg: #fff;
-    --border-color: #ccc;
-    --company-text-color: #222; /* titre principal */
-    --section-title-color: #222; /* titres secondaires */
+    --bg: #f6f8fb;
+    --text: #1f2933;
+    --card: rgba(255,255,255,0.92);
+    --border: #d0d7de;
+    --accent: #2563eb;
+    --shadow: 0 15px 40px rgba(0,0,0,.12);
+    --company-text-color: #222;
+    --section-title-color: #222;
 }
 
 body.dark {
-    --bg-color: #181818;
-    --text-color: #eee;
-    --accent: #1a73e8;
-    --card-bg: #242424;
-    --border-color: #555;
+    --bg: #0f172a;
+    --text: #e5e7eb;
+    --card: rgba(30,41,59,0.95);
+    --border: #475569;
+    --accent: #60a5fa;
     --company-text-color: #fff;
     --section-title-color: #fff;
 }
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: var(--bg-color);
-    color: var(--text-color);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
     transition: background 0.3s, color 0.3s;
+    padding: 15px;
 }
 
-/* Top Actions */
+/* ===== TOP BUTTONS ===== */
 .top-actions {
     position: fixed;
     top: 15px;
@@ -49,11 +51,11 @@ body {
     text-decoration: none;
     padding: 7px 14px;
     border-radius: 20px;
-    background: var(--card-bg);
-    color: var(--text-color);
+    background: var(--card);
+    color: var(--text);
     font-size: 0.9rem;
     font-weight: 500;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    box-shadow: var(--shadow);
     transition: transform 0.2s, background 0.3s, color 0.3s;
 }
 
@@ -69,10 +71,10 @@ body {
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    background: var(--card-bg);
-    color: var(--text-color);
+    background: var(--card);
+    color: var(--text);
     font-size: 1rem;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    box-shadow: var(--shadow);
     transition: background 0.3s, color 0.3s;
 }
 
@@ -109,9 +111,9 @@ body {
     max-width: 900px;
     margin: 80px auto;
     padding: 0 20px;
-    color: var(--text-color);
+    color: var(--text);
     line-height: 1.7;
-    text-align: center; /* tout centré */
+    text-align: center;
 }
 
 .portfolio-section h2 {
@@ -196,7 +198,7 @@ body {
 
 <!-- Top actions -->
 <div class="top-actions">
-    <a href="Home.html" class="home-link">Accueil</a>
+    <a href="Index.html" class="home-link">Accueil</a>
     <button id="themeBtn">🌙</button>
 </div>
 
@@ -224,8 +226,10 @@ body {
             📍 Adresse : 38, Rue Nianga, Quartier Diata, Arr. 1 Makélékélé
         </p>
 
+		<img src="QR Code Roston.png" alt="QR" width="50" height="50">
+
         <div class="social-links">
-            <a href="https://wa.me/0604058878" target="_blank" title="WhatsApp">
+            <a href="https://wa.me/064058878" target="_blank" title="WhatsApp">
                 <img src="w.png" alt="WhatsApp">
             </a>
             <a href="https://facebook.com/genese_prestance" target="_blank" title="Facebook">
@@ -244,11 +248,22 @@ body {
 </section>
 
 <script>
-// Bouton thème sombre / clair
+// Bouton thème sombre / clair avec stockage local
 const themeBtn = document.getElementById('themeBtn');
+if(localStorage.getItem('theme') === 'dark'){
+    document.body.classList.add('dark');
+    themeBtn.textContent = '☀️';
+}
+
 themeBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-    themeBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    if(document.body.classList.contains('dark')){
+        localStorage.setItem('theme', 'dark');
+        themeBtn.textContent = '☀️';
+    } else {
+        localStorage.setItem('theme', 'light');
+        themeBtn.textContent = '🌙';
+    }
 });
 </script>
 
